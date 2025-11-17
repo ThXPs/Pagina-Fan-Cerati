@@ -1,0 +1,185 @@
+/* =========================
+   ESTILO DEL FONDO Y TEXTO
+========================= */
+
+
+body {
+ 
+  color: #f5f5f5;              /* Texto claro */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-bottom: 50px;
+
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(fond.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -5; /* Asegura que el fondo quede detrás del contenido */
+  background-attachment: fixed; 
+}
+
+/* =========================
+   MENÚ PRINCIPAL
+========================= */
+
+.menu {
+  list-style: none;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 3px solid #00bfff;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 25px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+/* =========================
+   SUBMENÚ DESPLEGABLE (primer nivel)
+========================= */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  list-style: none;
+  min-width: 180px;
+  z-index: 10;
+  border-radius: 0 0 5px 5px;
+}
+
+.menu-desplegable:hover > .sub-menu {
+  display: block;
+}
+
+/* =========================
+   SUBMENÚ DE SEGUNDO NIVEL (canciones)
+========================= */
+.sub-menu .menu-desplegable {
+  position: relative;
+}
+
+.sub-menu .sub-menu {
+  top: 0;
+  left: 100%; /* 🔹 Esto hace que se abra hacia la derecha */
+  border-radius: 5px;
+  background: #2a2a2a;
+}
+
+.sub-menu .sub-menu li a {
+  padding: 10px 20px;
+  font-size: 0.95em;
+}
+
+.sub-menu .menu-desplegable > a::after {
+  content: "►"; /* Flechita indicadora */
+  float: right;
+  color: #00bfff;
+}
+
+/* =========================
+   EFECTOS Y DETALLES
+========================= */
+.sub-menu li a:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+/* =========================
+   RESPONSIVIDAD
+========================= */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu li a {
+    padding: 12px 20px;
+  }
+
+  /* En móvil, los submenús se abrirán hacia abajo */
+  .sub-menu .sub-menu {
+    left: 0;
+    top: 100%;
+  }
+}
+
+
+table {
+  width:40%; 
+  border-collapse:collapse
+}
+
+th, td { 
+  padding:12px 10px; 
+  text-align:left; 
+  border-bottom:1px solid #eee
+}
+
+th {
+  font-weight:300
+}
+
+caption {
+  font-size:18px; 
+  font-weight:700; 
+  margin-bottom:8px
+}
+
+
+/* =========================
+   IMÁGENES GENERALES
+========================= */
+img {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
+}
+
+/* =========================
+   ADAPTACIÓN RESPONSIVA
+========================= */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+}
