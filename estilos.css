@@ -97,11 +97,6 @@ body {
   font-size: 0.95em;
 }
 
-.sub-menu .menu-desplegable > a::after {
-  content: "►"; /* Flechita indicadora */
-  float: right;
-  color: #00bfff;
-}
 
 /* =========================
    EFECTOS Y DETALLES
